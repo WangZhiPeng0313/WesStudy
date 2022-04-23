@@ -1,7 +1,5 @@
 package com.wes.study.alg.list;
 
-import org.apache.flink.runtime.executiongraph.failover.AdaptedRestartPipelinedRegionStrategyNG;
-
 /**
  * 双向列表
  */

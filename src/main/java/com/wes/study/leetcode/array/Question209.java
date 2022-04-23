@@ -1,7 +1,5 @@
 package com.wes.study.leetcode.array;
 
-import scala.concurrent.java8.FuturesConvertersImpl;
-
 /**
  * 给定一个含有 n 个正整数的数组和一个正整数 target 。
  *
@@ -11,28 +9,35 @@ import scala.concurrent.java8.FuturesConvertersImpl;
 public class Question209 {
 
     public static void main(String[] args) {
-
+        int[] nums = new int[]{2,3,1,2,4,3};
+        int length = solution1(nums, 7);
+        System.out.println(length);
     }
 
+    /**
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public static int solution1(int[] nums, int target){
         if(nums == null || nums.length == 0) return 0;
 
         int left =0, right = 0;
-        int sumVal = nums[right];
-        int resLen = 0;
+        int sumVal = 0;
+        int resLen = Integer.MAX_VALUE;
 
-        while(left < nums.length){
-            if(sumVal >= target) {
+        while(right < nums.length){
+            sumVal = sumVal +nums[right];
+            while(sumVal >= target) {
                 int tmpLen = right - left + 1;
-                if(resLen > tmpLen) resLen = tmpLen;
-                // 加left右移
-                sumVal = sumVal - nums[left--];
+                if(tmpLen < resLen) resLen = tmpLen;
+                sumVal = sumVal - nums[left++];
             }
-            else {
-                sumVal = sumVal + nums[++right];
-            }
+            right++;
         }
 
-        return resLen;
+        return resLen == Integer.MAX_VALUE ? 0 : resLen;
+
     }
 }
