@@ -15,13 +15,14 @@ public class Question145 {
         TreeNode right;
 
         TreeNode() {
+
         }
 
         TreeNode(int val) {
             this.val = val;
         }
 
-        TreeNode(int val, Question94.TreeNode left, Question94.TreeNode right) {
+        TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
             this.right = right;
@@ -47,10 +48,12 @@ public class Question145 {
             curr = stack.pop();
 
             //
-            if(curr.right == null) {
+            if(curr.right == null || curr.right == ) {
+
                 result.add(curr.val);
             }
             else {
+                stack.push(curr);
                 curr = curr.right;
             }
         }
