@@ -92,7 +92,7 @@ public class Question1670 {
         }
 
         public int popMiddle() {
-
+            return 0;
         }
 
         public int popBack() {

@@ -48,7 +48,7 @@ public class Question145 {
             curr = stack.pop();
 
             //
-            if(curr.right == null || curr.right == ) {
+            if(curr.right == null || curr.right == null) {
 
                 result.add(curr.val);
             }
